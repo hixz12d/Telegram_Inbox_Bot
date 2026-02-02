@@ -1,0 +1,12 @@
+.ace-tool/
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.log
+inbox*.md
+.DS_Store
+.idea/
+.vscode/
+.ruff_cache/
