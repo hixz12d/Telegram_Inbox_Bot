@@ -37,8 +37,17 @@ python3 bot.py
 - `/ls`：列出所有 `inbox_*.md`
 - `/read`：读取最近月文件
 - `/read inbox_2026.1.md`：读取指定文件
-- `/get`：发送最近月文件
-- `/get inbox_2026.1.md`：发送指定文件
+- `/get`：发送最近月文件（兼容 /get md）
+- `/get inbox_2026.1.md`：发送指定文件（兼容旧用法）
+- `/get md inbox_2026.1.md`：发送指定文件
+- `/get media`：打包发送媒体文件
+- `/remove media`：清空媒体文件（需 confirm）
+
+## 媒体保存
+
+- 图片保存到：`{OUT_DIR}/media/YYYY.M/`
+- 文件名：`<file_unique_id>.jpg`
+- md 记录格式示例：`- [2026-02-03 12:00:00 CST] [图片] media/2026.2/abcdef.jpg`
 
 ## 写入格式
 
@@ -85,6 +94,12 @@ sudo systemctl restart telegram-inbox.service
 sudo systemctl status telegram-inbox.service --no-pager
 sudo journalctl -u telegram-inbox.service -f
 ```
+
+## 版本记录
+
+- **v0.1**：基础写入 `inbox.md`、/id、白名单
+- **v0.2**：按月分文件、12 小时内时间分组、/read /get /ls
+- **v0.3**：支持图片保存、媒体打包导出与清理（/get media、/remove media）
 
 ## 常见问题
 

@@ -10,3 +10,5 @@ inbox*.md
 .idea/
 .vscode/
 .ruff_cache/
+AGENTS.md
+NUL
